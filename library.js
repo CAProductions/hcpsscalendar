@@ -1,4 +1,3 @@
-//eruda.init();
 const times = {};
 times.timeNum = function(hour,min,sec,ms) {
   if(arguments.length == 0) hour = times.getHr();
@@ -8,7 +7,6 @@ times.timeNum = function(hour,min,sec,ms) {
     min = hour[1];
     hour = hour[0];
   }
-  //document.getElementById("test").innerHTML = arguments.length;
   if(!ms) ms = 0;
   if(!sec) sec = 0;
   return ms/1000+sec+min*60+hour*3600;
@@ -52,13 +50,13 @@ times.timeSheet = {normal:[
   {}
 ]};
 
-times.days = {"11/8/2023":"normal","11/9/2023":"normal","11/10/2023":"normal"};
+times.days = {};
 //{normal,set,half}
 //{name, startTime, endTime}
 
 times.getData = function(time,day,schedule) {
   if(arguments.length==0||time=="") time = times.timeNum();
-  if(arguments.length<2||day=="") day = times.days[times.getDay()];
+  if(arguments.length<2||day=="") day = times.days[times.getDay()] || "normal";
   if(arguments.length<3||schedule=="") schedule = times.timeSheet[day];
   let pd = null;
   let t = times.timeNum();
