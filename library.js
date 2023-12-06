@@ -67,6 +67,7 @@ times.getData = function(time,day,schedule) {
   let e = schedule[pd];
   return {name:e.name,timeLeft:e.endTime-t,timeIn:t-e.startTime};
 }
+/*  Example Usage:
 updateTimes();
 setInterval(updateTimes,500);
 function updateTimes() {
@@ -74,5 +75,6 @@ function updateTimes() {
   let res = [t[0].toString(),t[1].toString(),t[2].toString()];
   if(res[2].length==1) res[2] = `0${res[2]}`;
   if(res[1].length==1) res[1] = `0${res[1]}`;
-  document.getElementById("current").innerHTML = res.join(":");
+  document.getElementById("time").innerHTML = res.join(":");
 }
+*/
